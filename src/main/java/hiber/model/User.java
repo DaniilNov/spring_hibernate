@@ -1,5 +1,7 @@
 package hiber.model;
 
+import org.hibernate.engine.internal.Cascade;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,7 +21,7 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne
+   @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
    private Car car;
 
    public User() {}

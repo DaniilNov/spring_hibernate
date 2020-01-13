@@ -3,12 +3,21 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "cars")
 public class Car {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Column(name = "name")
     String name;
+
+    @Column(name = "series")
     int series;
+
+    @OneToOne
+    @MapsId
+    private User user;
 
 
     public Car() {
