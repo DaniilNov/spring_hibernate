@@ -15,10 +15,6 @@ public class Car {
     @Column(name = "series")
     int series;
 
-    @OneToOne
-    @MapsId
-    private User user;
-
 
     public Car() {
     }
@@ -50,5 +46,13 @@ public class Car {
 
     public void setSeries(int series) {
         this.series = series;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", series=" + series +
+                '}';
     }
 }
